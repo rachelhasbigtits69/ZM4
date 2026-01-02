@@ -1,13 +1,5 @@
 #!/usr/bin/env python3
 
-# ========= PYTHON 3.12 ASYNCIO FIX =========
-import asyncio
-try:
-    asyncio.get_running_loop()
-except RuntimeError:
-    loop = asyncio.new_event_loop()
-    asyncio.set_event_loop(loop)
-# =========================================
 
 from asyncio import Lock
 from collections import OrderedDict
