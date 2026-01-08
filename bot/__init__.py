@@ -597,6 +597,15 @@ else:
             del qb_opt[k]
     qb_client.app_set_preferences(qb_opt)
 
+import asyncio
+
+try:
+    asyncio.get_running_loop()
+except RuntimeError:
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+
+
 bot = tgClient('bot',
             TELEGRAM_API,
             TELEGRAM_HASH,
